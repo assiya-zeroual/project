@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Professionnel - Modèle Universel</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Main Layout */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .left-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .right-column {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            font-size: 1.5rem;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Skills */
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background: var(--light-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: var(--secondary-color);
+            border-radius: 5px;
+        }
+        
+        /* Experience & Education */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            list-style: none;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .timeline-period {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-company {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: none;
+                font-size: 12pt;
+            }
+            
+            .container {
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            .card {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            
+            a {
+                text-decoration: none;
+                color: var(--text-color);
+            }
+        }
+
+        /* Lettre de Motivation Styles */
+        .cover-letter {
+            background: white;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        
+        .letter-header {
+            margin-bottom: 30px;
+        }
+        
+        .letter-date {
+            text-align: right;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .letter-content {
+            line-height: 1.8;
+        }
+        
+        .letter-signature {
+            margin-top: 40px;
+            font-style: italic;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- CV Section -->
+        <header>
+            <h1>Hiba</h1>
+
+        </header>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <!-- Contact -->
+                <div class="card">
+                    <h2>Contact</h2>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a >hanaechach@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a >votre numero de telephone</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            [Votre Ville]
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin"></i>
+                            <a target="_blank">votre_linkedin</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Compétences -->
+                <div class="card">
+                    <h2>Compétences</h2>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>[Compétence 1]</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>[Compétence 2]</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>[Compétence 3]</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>[Compétence 4]</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Langues -->
+                <div class="card">
+                    <h2>Langues</h2>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Français</span>
+                                <span>Langue maternelle</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Anglais</span>
+                                <span>[Niveau]</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Centres d'intérêt -->
+                <div class="card">
+                    <h2>Centres d'intérêt</h2>
+                    <ul>
+                        <li>[Intérêt 1]</li>
+                        <li>[Intérêt 2]</li>
+                        <li>[Intérêt 3]</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <!-- Profil -->
+                <div class="card">
+                    <h2>Profil Professionnel</h2>
+                    <p>[Résumez votre parcours en 4-5 lignes maximum. Mentionnez vos années d'expérience, vos domaines d'expertise, vos principales qualités et ce que vous recherchez dans votre prochain poste.]</p>
+                </div>
+                
+                <!-- Expérience -->
+                <div class="card">
+                    <h2>Expérience Professionnelle</h2>
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-period">[Année début] - [Année fin]</div>
+                            <h3 class="timeline-title">[Intitulé du poste]</h3>
+                            <div class="timeline-company">[Nom de l'entreprise], [Ville]</div>
+                            <ul>
+                                <li>[Responsabilité/Realisation 1]</li>
+                                <li>[Responsabilité/Realisation 2]</li>
+                                <li>[Responsabilité/Realisation 3]</li>
+                            </ul>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-period">[Année début] - [Année fin]</div>
+                            <h3 class="timeline-title">[Intitulé du poste]</h3>
+                            <div class="timeline-company">[Nom de l'entreprise], [Ville]</div>
+                            <ul>
+                                <li>[Responsabilité/Realisation 1]</li>
+                                <li>[Responsabilité/Realisation 2]</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Formation -->
+                <div class="card">
+                    <h2>Formation</h2>
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-period">[Année début] - [Année fin]</div>
+                            <h3 class="timeline-title">[Diplôme obtenu]</h3>
+                            <div class="timeline-company">[Établissement], [Ville]</div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-period">[Année début] - [Année fin]</div>
+                            <h3 class="timeline-title">[Diplôme obtenu]</h3>
+                            <div class="timeline-company">[Établissement], [Ville]</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Réalisations -->
+                <div class="card">
+                    <h2>Réalisations</h2>
+                    <ul>
+                        <li>
+                            <strong>[Projet/Réalisation 1]</strong> - [Description brève]
+                        </li>
+                        <li>
+                            <strong>[Projet/Réalisation 2]</strong> - [Description brève]
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lettre de Motivation Générique -->
+        <div class="cover-letter">
+            <div class="letter-header">
+                <p>Hiba</p>
+                <p>[Votre Adresse]</p>
+                <p>[Code Postal Ville]</p>
+                <p>[Téléphone]</p>
+                <p>hanaechach@gmail.com</p>
+            </div>
+            
+            <div class="letter-date">[Ville], le [date]</div>
+            
+            <div class="letter-content">
+                <p>À l'attention du Responsable des Ressources Humaines,</p>
+                <p>[Nom de l'entreprise],</p>
+                <p>[Adresse de l'entreprise]</p>
+                <p>[Code Postal Ville]</p>
+                
+                <p><strong>Objet : Candidature pour le poste de [Intitulé du poste]</strong></p>
+                
+                <p>Madame, Monsieur,</p>
+                
+                <p>Actuellement [votre situation actuelle], je suis vivement intéressé(e) par le poste de [intitulé du poste] au sein de votre entreprise. Votre annonce a particulièrement retenu mon attention car elle correspond parfaitement à mon profil professionnel et à mes aspirations de carrière.</p>
+                
+                <p>Fort(e) de [X années] d'expérience dans le domaine de [votre domaine], j'ai développé des compétences solides en [compétence 1], [compétence 2] et [compétence 3]. Au cours de mon parcours chez [ancienne entreprise], j'ai notamment :</p>
+                <ul>
+                    <li>[Réalisation ou responsabilité marquante 1]</li>
+                    <li>[Réalisation ou responsabilité marquante 2]</li>
+                    <li>[Réalisation ou responsabilité marquante 3]</li>
+                </ul>
+                
+                <p>Mon [qualité personnelle 1] et mon [qualité personnelle 2] me permettent de [bénéfice pour l'entreprise]. Par ailleurs, ma capacité à [autre compétence] serait un atout pour contribuer à [projet ou objectif de l'entreprise].</p>
+                
+                <p>Votre entreprise, reconnue pour [spécificité ou valeur de l'entreprise], représente pour moi l'opportunité idéale de mettre à profit mes compétences tout en continuant à me perfectionner.</p>
+                
+                <p>Je serais ravi(e) d'échanger avec vous sur la manière dont mon profil pourrait répondre à vos besoins. Je reste à votre disposition pour un entretien à votre convenance.</p>
+                
+                <p>Dans l'attente de votre réponse, je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.</p>
+                
+                <div class="letter-signature">
+                    <p>[Votre Prénom NOM]</p>
+                    <p>Pièce jointe : CV</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
